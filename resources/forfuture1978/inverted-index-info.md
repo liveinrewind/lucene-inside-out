@@ -45,17 +45,24 @@
         - 第二部分是在词典文件中的偏移量(IndexDelta)
         - 假设IndexInterval为4,此数组中保存第4个,第8个,第12个词...
 
-#### 代码实现
+#### 代码实现简单理解
 
     lucene索引文件后缀常量类: IndexFileNames
 
+    1.TermInfosReader构造器初始化
+    2.TermInfosReader.get(Term term)调用入口
 
+    实现逻辑:
+    初始化: 
+        读取.tis文件全部,.tii文件除了terminfo list;
+    查下terminfo通过term: 
+        先在lru缓存里查找
+        再从.tii读出来的索引结构二分查找
+        最后再从文件查找
+    如果term很大,IndexInterval怎么平衡? 压测看看结果先
+    考虑其他实现: hash, b tree这两种数据结构是搜素引擎字典构造推荐的结构,但是文件怎么存储?
 
-
-
-
-
-
+##### 实现细节整理
 
 
 
