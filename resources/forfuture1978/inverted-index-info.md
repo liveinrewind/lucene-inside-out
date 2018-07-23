@@ -64,6 +64,43 @@
 
 ##### 实现细节整理
 
+    1.TermInfosWriter
+    2.TermInfosReader
+
+---
+
+### .frq AND .prx文件格式
+
+![](./images/frq.jpg)
+![](./images/prx.jpg)
+
+#### 文档号及词频(frq)信息
+
+FormatPostingsPositionsWriter
+
+#### 词位置(prx)信息
+
+FormatPostingsPositionsWriter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
